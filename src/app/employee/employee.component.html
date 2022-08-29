@@ -1,0 +1,99 @@
+
+<h1 class="text">Employee Form</h1>
+
+<div class="form-container">
+
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>First Name</mat-label>
+        <input matInput type="text" id="firstname" name="firstname" formControlName="firstname" placeholder="First Name">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+ 
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Middle Name</mat-label>
+        <input matInput type="text" id="middlename" name="middlename" formControlName="middlename" placeholder="Middle Name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Last Name</mat-label>
+        <input matInput type="text" id="lastname" name="lastname" formControlName="lastname" placeholder="Last Name">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" id="email" name="email" formControlName="email" placeholder="Email">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Contact</mat-label>
+        <input matInput type="text" id="contact" name="contact" formControlName="contact" placeholder="Contact">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required and should be of 10 digits.
+        </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Gender</mat-label>
+        <mat-select matNativeControl name="gender" formControlName="gender">
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput type="date" id="DOB" name="DOB" formControlName="DOB" placeholder="Date Of Birth">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>  
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Employee Type</mat-label>
+        <mat-select matNativeControl name="gender" formControlName="employeetype">
+            <mat-option value="contact">Contract</mat-option>
+            <mat-option value="permanent">Permanent</mat-option>
+        </mat-select>
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-4">
+        <mat-label>Address</mat-label>
+        <input matInput type="text" id="address" name="address" formControlName="address" placeholder="Address">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="col-md-12">
+        <mat-label>Pincode</mat-label>
+        <input matInput type="text" id="pincode" name="pincode" formControlName="pincode" placeholder="Pincode">
+        <mat-error *ngIf="employeeForm.invalid">
+            It is required and should be of 6 digits.
+        </mat-error>
+    </mat-form-field>
+   
+
+    <div class="sBTN">
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+   
+</form>
+
+</div>
